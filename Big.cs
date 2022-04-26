@@ -176,4 +176,38 @@ public class BigInteger
         }
         return new BigInteger(result);
     }
+    private string replaceByIndex(string str, int index, char symbol)
+    {
+        string result = "";
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (i != index)
+            {
+                result += str[i];
+            }
+            else
+            {
+                result += symbol;
+            }
+        }
+        return result;
+    }
+
+    private string FindBigger(string first1, string second1)
+    {
+        if (first1.Length > second1.Length)
+            return first1;
+        else if (second1.Length > first1.Length)
+            return second1;
+        else
+        {
+            for (int i = 0; i < first1.Length; i++)
+            {
+                if (first1[i] - '0' > second1[i] - '0')
+                    return first1;
+            }
+        }
+        return second1;
+    }
+    
 }
